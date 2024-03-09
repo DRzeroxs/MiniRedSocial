@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = " Agregar Amigos";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header bg-dark text-light">
+                    <h4>Agregar Amigos</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="FriendShip" asp-action="AddFriend">
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario:</label>
+                            <input type="text" id="username" name="username" class="form-control" for="username" />
+                            
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                        <a asp-controller="FriendShip" asp-action="index" class="btn btn-warning">Volver atrás</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

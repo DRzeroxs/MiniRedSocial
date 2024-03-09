@@ -1,0 +1,98 @@
+﻿@using MiniRedSocial.Core.Application.ViewModels.Publication;
+@using MiniRedSocial.Core.Application.Enums;
+@model PublicationViewModel;
+
+@{
+    ViewData["Title"] = "Comentarios";
+}
+
+<div class="row mb-3">
+    <div class="col-3 offset-9">
+        <a asp-action="index" asp-controller="Home" class="btn btn-outline-secondary d-block mx-auto">
+            <i class="bi bi-file-plus-fill"></i> Volver atras
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <h1 class="display-6">Comentarios</h1>
+    <div class="offset-12">
+        @if (Model != null)
+        {
+
+            <div class="mb-3" style="border: solid 2px black; padding: 5px; border-radius: 5px;">
+
+                @if (Model.Tipe == (int)MessageTipe.Text)
+                {
+                    <div class="mb-3">
+                        <img src="@Model.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; max-height: 50px; max-width: 50px; border-radius: 50%;">
+                        <p class="mb-2">@Model.Date</p>
+                        <p>@Model.Content</p>
+                    </div>
+                }
+
+                @if (Model.Tipe == (int)MessageTipe.Image)
+                {
+                    <div class="mb-3" style="text-align: center;">
+                        <div class="text-overlay" style="text-align: left;">
+                            <img src="@Model.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; max-height: 50px; max-width: 50px; border-radius: 50%;">
+                            <p>@Model.Date</p>
+                            <p>@Model.Content</p>
+                        </div>
+                        <img src="@Model.Url" alt="Imagen" style="display: inline-block; margin: 0 auto; height: auto; max-width: 400px;">
+                    </div>
+                }
+
+                @if (Model.Tipe == (int)MessageTipe.Video)
+                {
+                    <div class="mb-3" style="text-align: center;">
+                        <div class="text-overlay" style="text-align: left;">
+                            <img src="@Model.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; max-height: 50px; max-width: 50px; border-radius: 50%;">
+                            <p>@Model.Date</p>
+                            <p>@Model.Content</p>
+                        </div>
+                        <iframe src="@Model.Url" id="youtube-player" width="450" height="250" frameborder="0" allowfullscreen style="display: inline-block; margin: 0 auto;"></iframe>
+                    </div>
+
+                }
+
+                <div style="display: flex; justify-content: space-between;">
+
+                    <a class="btn btn-outline-primary btn-sm" asp-action="AgregarComentario" asp-controller="Message" asp-route-id="@Model.Id">
+                        Comentar
+                    </a>
+                </div>
+
+
+            </div>
+
+            if (Model.Messages != null && Model.Messages.Count() > 0){
+                <div class="mb-3" style="padding: 5px; border-radius: 5px; margin-left: 10px;">
+                    @foreach (var comment in Model.Messages)
+                    {
+                        <div class="mb-3" style="border-left: solid 2px blue; padding: 5px; border-top: solid 1px blue; border-radius: 3px; border-bottom: solid 1px gray">
+                            <img src="@comment.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; max-height: 50px; max-width: 50px; border-radius: 50%;">
+                            <p class="mb-2">@comment.Date</p>
+                            <p class="mb-3">@comment.Content</p>
+
+                            <a class="btn btn-outline-primary btn-sm" asp-action="VerRespuestas" asp-controller="Hilo" asp-route-id="@comment.Id">
+                                @(comment.Respuestas.Count == 0 ? "Agregar respuesta" : $"Ver respuestas {comment.Respuestas.Count()}")
+                            </a>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p style="margin-left: 10px;">No hay comentarios</p>
+            }
+
+        }
+        else
+        {
+            <p>No hay publicacion</p>
+        }
+    </div>
+</div>
+
+

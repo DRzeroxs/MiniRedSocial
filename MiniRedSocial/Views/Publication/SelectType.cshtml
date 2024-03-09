@@ -1,0 +1,45 @@
+﻿@using MiniRedSocial.Core.Application.ViewModels.Publication;
+@using MiniRedSocial.Core.Application.Enums;
+@model SelectTipeViewModel
+@{
+    ViewData["Title"] = "Seleccionar tipo";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header bg-dark text-light">
+                    <h4>Registro de nuevo usuario</h4>
+                </div>
+                <div class="card-body">
+
+                    <form method="post" asp-controller="Publication" asp-action="SelectType" enctype="multipart/form-data">
+
+                        <div class="mb-3">
+                            <label asp-for="Tipe">Selecciona un tipo de publicacion:</label>
+                            <select asp-for="Tipe" id="tipe" name="Tipe">
+                                <option value="0">Selecciona una opción</option>
+                                @foreach (var value in Enum.GetValues(typeof(MessageTipe)))
+                                {
+                                    <option value="@((int)value)">@value</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Tipe" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Crear</button>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Volver atras</a>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

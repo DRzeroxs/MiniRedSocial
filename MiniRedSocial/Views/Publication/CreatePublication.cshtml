@@ -1,0 +1,64 @@
+﻿@using MiniRedSocial.Core.Application.ViewModels.Publication;
+@model SavePublicationViewModel
+@{
+    ViewData["Title"] = "Crear Publicacion";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header bg-dark text-light">
+                    <h4>Crear Publicacion</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="Publication" asp-action="CreatePublication" enctype="multipart/form-data">
+
+                        <input hidden asp-for="Tipe" />
+
+                        <div class="mb-3">
+                            <label asp-for="Content" class="form-label">Mensaje: </label>
+                            <textarea asp-for="Content" class="form-control"></textarea>
+                            <span asp-validation-for="Content" class="text-danger"></span>
+                        </div>
+
+                        @if(Model.Tipe == 2)
+                        {
+                            <div class="mb-3">
+                                <label asp-for="File" class="form-label">Seleccione un archivo:</label>
+
+                                <input required asp-for="File" class="form-control" />
+
+                                <span asp-validation-for="File" class="text-danger"></span>
+                            </div>
+                        }
+
+                        @if(Model.Tipe == 3)
+                        {
+                            <div class="mb-3">
+                                <label asp-for="Url" class="form-label">URL del video: </label>
+                                <input asp-for="Url" class="form-control" />
+                                <span asp-validation-for="Url" class="text-danger"></span>
+                            </div>
+                        }
+
+                        <input type="datetime-local" asp-for="Date" class="form-control" hidden />
+
+                        <button type="submit" class="btn btn-primary">Publicar</button>
+                        <a asp-controller="User" asp-action="Index" class="btn btn-warning">Volver atras</a>
+
+                    </form>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,50 @@
+﻿@using MiniRedSocial.Core.Application.ViewModels.User;
+@model SaveUserViewModel
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-6">
+            <div class="mb-3 mx-auto d-flex justify-content-center align-items-center" style="height: 300px; width:300px;">
+                <div class="aspect-ratio-box">
+                    <img src="@Url.Content(Model.ImageUrl)" class="img-fluid" alt="Foto de perfil" style="max-height: 100%; max-width: 100%;">
+                </div>
+            </div>
+            <div class="card mx-auto">
+                <div class="card-header bg-dark text-light">
+                    <h4>Datos de usuario</h4>
+                </div>
+                <div class="card-body text-center">
+                    <dl class="row">
+                        <dt class="col-sm-3">Nombre:</dt>
+                        <dd class="col-sm-9">@Model.Name</dd>
+
+                        <dt class="col-sm-3">Apellido:</dt>
+                        <dd class="col-sm-9">@Model.LastName</dd>
+
+                        <dt class="col-sm-3">UserName:</dt>
+                        <dd class="col-sm-9">@Model.UserName</dd>
+
+                        <dt class="col-sm-3">Telefono:</dt>
+                        <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+                        <dt class="col-sm-3">Correo:</dt>
+                        <dd class="col-sm-9">@Model.Email</dd>
+                    </dl>
+                    <div class="d-flex justify-content-center">
+                        <div style="margin-right: 5px;">
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver atrás</a>
+                        </div>
+
+                        <div>
+                            <a asp-controller="Home" asp-action="UpdateProfile" class="btn btn-warning">Cambiar informacion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

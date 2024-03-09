@@ -1,0 +1,76 @@
+﻿@using MiniRedSocial.Core.Application.ViewModels.Publication;
+@using MiniRedSocial.Core.Application.Enums;
+@model List<PublicationViewModel>;
+
+@{
+    ViewData["Title"] = "Amigos";
+}
+
+<div class="row mb-3">
+    <div class="col-3 offset-9">
+        <a asp-action="AddFriend" asp-controller="FriendShip" class="btn btn-outline-secondary d-block mx-auto">
+            <i class="bi bi-file-plus-fill"></i> Agregar Amigo
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <h1 class="display-4">Publicaciones</h1>
+    <div class="offset-12">
+        @if (Model != null && Model.Count > 0)
+        {
+            @foreach (PublicationViewModel publication in Model)
+            {
+                <div class="mb-3" style="border: solid 2px black; padding: 5px; border-radius: 5px;">
+
+                    @if (publication.Tipe == (int)MessageTipe.Text)
+                    {
+                        <div class="mb-3">
+                            <img src="@publication.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; height: auto; max-width: 50px; border-radius: 50%;">
+                            <p class="mb-2">@publication.Date</p>
+                            <p>@publication.Content</p>
+                        </div>
+                    }
+
+                    @if (publication.Tipe == (int)MessageTipe.Image)
+                    {
+                        <div class="mb-3" style="text-align: center;">
+                            <div class="text-overlay" style="text-align: left;">
+                                <img src="@publication.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; height: auto; max-width: 50px; border-radius: 50%;">
+                                <p>@publication.Date</p>
+                                <p>@publication.Content</p>
+                            </div>
+                            <img src="@publication.Url" alt="Imagen" style="display: inline-block; margin: 0 auto; height: auto; max-width: 400px;">
+                        </div>
+                    }
+
+                    @if (publication.Tipe == (int)MessageTipe.Video)
+                    {
+                        <div class="mb-3" style="text-align: center;">
+                            <div class="text-overlay" style="text-align: left;">
+                                <img src="@publication.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; height: auto; max-width: 50px; border-radius: 50%;">
+                                <p>@publication.Date</p>
+                                <p>@publication.Content</p>
+                            </div>
+                            <iframe  src="@publication.Url" class="youtube-player" id="youtube-player-@publication.Id" width="450" height="250" frameborder="0" allowfullscreen style="display: inline-block; margin: 0 auto;"></iframe>
+                        </div>
+                    }
+
+                    <div style="display: flex; justify-content: space-between;">
+                        <a class="btn btn-outline-danger btn-sm" asp-action="EliminarPublicacion" asp-controller="Publication" asp-route-id="@publication.Id">
+                            Elimar Publicacion
+                        </a>
+                        <a class="btn btn-outline-primary btn-sm" asp-action="VerComentarios" asp-controller="Message" asp-route-id="@publication.Id">
+                            @((publication.Messages.Count() > 0) ? $"Comentarios ({publication.Messages.Count()})" : "Agregar comentario")
+                        </a>
+                    </div>
+
+                </div>
+            }
+        }
+        else
+        {
+            <p>No hay publicaciones</p>
+        }
+    </div>
+</div>

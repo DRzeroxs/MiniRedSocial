@@ -1,0 +1,66 @@
+﻿@using MiniRedSocial.Core.Application.ViewModels.Message;
+@model MessageViewModel;
+
+@{
+    ViewData["Title"] = "Respuestas";
+}
+
+<div class="row mb-3">
+    <div class="col-3 offset-9">
+        <a asp-action="index" asp-controller="Home" class="btn btn-outline-secondary d-block mx-auto">
+            <i class="bi bi-file-plus-fill"></i> Volver atras
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <h1 class="display-6">Respuestas</h1>
+    <div class="offset-12">
+        @if (Model != null)
+        {
+
+            <div class="mb-3" style="border: solid 2px black; padding: 5px; border-radius: 5px;">
+
+                    <div class="mb-3">
+                    <img src="@Model.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; max-height: 50px; max-width: 50px; border-radius: 50%;">
+                        <p class="mb-2">@Model.Date</p>
+                        <p>@Model.Content</p>
+                    </div>
+                
+                <div style="display: flex; justify-content: space-between;">
+
+                    <a class="btn btn-outline-primary btn-sm" asp-action="AgregarRespuesta" asp-controller="Hilo" asp-route-id="@Model.Id">
+                        Responder
+                    </a>
+                </div>
+
+
+            </div>
+
+            if (Model.Respuestas != null && Model.Respuestas.Count() > 0)
+            {
+                <div class="mb-3" style="padding: 5px; border-radius: 5px; margin-left: 10px;">
+                    @foreach (var comment in Model.Respuestas)
+                    {
+                        <div class="mb-3" style="border-left: solid 2px blue; padding: 5px; border-top: solid 1px blue; border-radius: 3px; border-bottom: solid 1px gray">
+                            <img src="@comment.UserImg" alt="Imagen" style="display: inline-block; margin: 0 auto; max-height: 50px; max-width: 50px; border-radius: 50%;">
+                            <p class="mb-2">@comment.Date</p>
+                            <p class="mb-3">@comment.Content</p>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p style="margin-left: 10px;">No hay Respuestas</p>
+            }
+
+        }
+        else
+        {
+            <p>No hay publicacion</p>
+        }
+    </div>
+</div>
+
+

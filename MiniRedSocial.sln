@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniRedSocial", "MiniRedSocial\MiniRedSocial.csproj", "{3B96B638-19C7-4246-AE81-89DC6004BD67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{6101CDDD-7173-4DDA-AF2C-23DDA211752A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{4914DD23-EFEC-4999-ADD5-75F2DB746E0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{FAADDDDB-CAF3-42C4-8621-F8DE70B53A23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastruture", "Infrastruture", "{9E32CD80-C6EE-4A0F-B449-039D2E74AA25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EBA99ACF-36BC-46A7-908B-FDC3619FC6BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniRedSocial.Infrastructure.Persistence", "MiniRedSocial.Infrastructure.Persistence\MiniRedSocial.Infrastructure.Persistence.csproj", "{0D76D35B-09CF-4FEF-923E-7A5DE594C3D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniRedSocial.Core.Application", "MiniRedSocial.Core.Application\MiniRedSocial.Core.Application.csproj", "{466EE6DB-A16A-4FD4-B914-B9E9402BFAD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniRedSocial.Core.Domain", "MiniRedSocial.Core.Domain\MiniRedSocial.Core.Domain.csproj", "{3E0A6F83-5BF1-429E-8CF6-147D154D22F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniRedSocial.Infrastructure.Shared", "MiniRedSocial.Infrastructure.Shared\MiniRedSocial.Infrastructure.Shared.csproj", "{817079D3-7484-47C8-94AA-A572B3AAA966}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9E78093E-0505-4E8F-ABB8-7C841FB764DE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniRedSocial.infrastructure.Identity", "MiniRedSocial.infrastructure.Identity\MiniRedSocial.infrastructure.Identity.csproj", "{EAD6843A-198F-40C6-935E-923B34C3A187}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B96B638-19C7-4246-AE81-89DC6004BD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B96B638-19C7-4246-AE81-89DC6004BD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B96B638-19C7-4246-AE81-89DC6004BD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B96B638-19C7-4246-AE81-89DC6004BD67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D76D35B-09CF-4FEF-923E-7A5DE594C3D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D76D35B-09CF-4FEF-923E-7A5DE594C3D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D76D35B-09CF-4FEF-923E-7A5DE594C3D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D76D35B-09CF-4FEF-923E-7A5DE594C3D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{466EE6DB-A16A-4FD4-B914-B9E9402BFAD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466EE6DB-A16A-4FD4-B914-B9E9402BFAD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466EE6DB-A16A-4FD4-B914-B9E9402BFAD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466EE6DB-A16A-4FD4-B914-B9E9402BFAD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0A6F83-5BF1-429E-8CF6-147D154D22F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0A6F83-5BF1-429E-8CF6-147D154D22F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0A6F83-5BF1-429E-8CF6-147D154D22F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0A6F83-5BF1-429E-8CF6-147D154D22F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817079D3-7484-47C8-94AA-A572B3AAA966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817079D3-7484-47C8-94AA-A572B3AAA966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817079D3-7484-47C8-94AA-A572B3AAA966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817079D3-7484-47C8-94AA-A572B3AAA966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD6843A-198F-40C6-935E-923B34C3A187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD6843A-198F-40C6-935E-923B34C3A187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD6843A-198F-40C6-935E-923B34C3A187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD6843A-198F-40C6-935E-923B34C3A187}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B96B638-19C7-4246-AE81-89DC6004BD67} = {FAADDDDB-CAF3-42C4-8621-F8DE70B53A23}
+		{4914DD23-EFEC-4999-ADD5-75F2DB746E0F} = {6101CDDD-7173-4DDA-AF2C-23DDA211752A}
+		{FAADDDDB-CAF3-42C4-8621-F8DE70B53A23} = {4914DD23-EFEC-4999-ADD5-75F2DB746E0F}
+		{9E32CD80-C6EE-4A0F-B449-039D2E74AA25} = {6101CDDD-7173-4DDA-AF2C-23DDA211752A}
+		{EBA99ACF-36BC-46A7-908B-FDC3619FC6BE} = {6101CDDD-7173-4DDA-AF2C-23DDA211752A}
+		{0D76D35B-09CF-4FEF-923E-7A5DE594C3D0} = {9E32CD80-C6EE-4A0F-B449-039D2E74AA25}
+		{466EE6DB-A16A-4FD4-B914-B9E9402BFAD6} = {EBA99ACF-36BC-46A7-908B-FDC3619FC6BE}
+		{3E0A6F83-5BF1-429E-8CF6-147D154D22F8} = {EBA99ACF-36BC-46A7-908B-FDC3619FC6BE}
+		{817079D3-7484-47C8-94AA-A572B3AAA966} = {9E32CD80-C6EE-4A0F-B449-039D2E74AA25}
+		{EAD6843A-198F-40C6-935E-923B34C3A187} = {9E32CD80-C6EE-4A0F-B449-039D2E74AA25}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B5755C9B-A681-4854-97CB-ABC79E0AD7D5}
+	EndGlobalSection
+EndGlobal
